@@ -1,15 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Header from './common/header/header.component';
+import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import BannerCorousel from './common/banner-corousel/banner-corousel.component';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Header />
+      <Routes>
+        <Route key={1} path="/" element={<App />}></Route>
+        <Route key={3} path="/blog" element={<BannerCorousel />}></Route>
+        <Route key={2} path="/about-us" element={<App />}></Route>
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 

@@ -1,0 +1,8 @@
+.nav-link:focus, .nav-link:hover, .navbar-nav .nav-link.active {
+    color: var(--bs-link-hover-color);
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    color: var(--bs-white);
+    background-color: var(--bs-link-hover-color);
+}

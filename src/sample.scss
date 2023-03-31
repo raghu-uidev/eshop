@@ -1,0 +1,18 @@
+.fDiv {
+    /*styles for fDiv*/
+    //@include  mixinname
+    color: #fff;
+    .chilDiv {
+        
+        p {
+            color: #000;
+            padding: 10px;
+            span {
+              text-align: center;
+            }
+        }
+    }
+
+
+    
+}
