@@ -20,16 +20,14 @@ const Header = (props: any) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link active={true}>
-              <Link to="/">Home</Link>
-            </Nav.Link>
+            <Nav.Link active={true}><Link to="/">Home</Link></Nav.Link>
             <NavDropdown title="Category" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Mobiles</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Laptops</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Fashion</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Cosmetics</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Footware</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Kids</NavDropdown.Item>
+              <Link className="dropdown-item" to="/products/mobiles">Mobiles</Link>
+              <Link className="dropdown-item" to="/products/laptops">Laptops</Link>
+              <Link className="dropdown-item" to="/products/fashion">Fashion</Link>
+              <Link className="dropdown-item" to="/products/cosmetics">Cosmetics</Link>
+              <Link className="dropdown-item" to="/products/footware">Footware</Link>
+              <Link className="dropdown-item" to="/products/kids">Kids</Link>
             </NavDropdown>
             <Nav.Link><Link to="/blog">Blog</Link></Nav.Link>
             <Nav.Link><Link to="/about-us">About Us</Link></Nav.Link>

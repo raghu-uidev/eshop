@@ -1,8 +1,14 @@
-.nav-link:focus, .nav-link:hover, .navbar-nav .nav-link.active {
+.navbar-nav a {
+    color: var(--bs-nav-link-color);
+    text-decoration: none;
+}
+
+.navbar-nav a:focus, .navbar-nav a:hover, .navbar-nav a.active {
     color: var(--bs-link-hover-color);
 }
 
-.dropdown-item:focus, .dropdown-item:hover {
+
+.navbar-nav .dropdown-item:focus, .navbar-nav .dropdown-item:hover {
     color: var(--bs-white);
     background-color: var(--bs-link-hover-color);
 }

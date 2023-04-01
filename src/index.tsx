@@ -6,7 +6,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Header from './common/header/header.component';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
-import BannerCorousel from './common/banner-corousel/banner-corousel.component';
+import AboutUs from './common/about-us/about-us.component';
+import Blog from './common/blog/blog.component';
+import ProductsByCategory from './modules/@products/products-by-category/products-by-category';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,8 +19,9 @@ root.render(
       <Header />
       <Routes>
         <Route key={1} path="/" element={<App />}></Route>
-        <Route key={3} path="/blog" element={<BannerCorousel />}></Route>
-        <Route key={2} path="/about-us" element={<App />}></Route>
+        <Route key={3} path="/products/:category" element={<ProductsByCategory />}></Route>
+        <Route key={3} path="/blog" element={<Blog />}></Route>
+        <Route key={2} path="/about-us" element={<AboutUs />}></Route>
       </Routes>
     </Router>
   </React.StrictMode>
