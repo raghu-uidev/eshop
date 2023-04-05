@@ -1,6 +1,7 @@
 .navbar-nav a {
     color: var(--bs-nav-link-color);
     text-decoration: none;
+    padding: 10px;
 }
 
 .navbar-nav a:focus, .navbar-nav a:hover, .navbar-nav a.active {

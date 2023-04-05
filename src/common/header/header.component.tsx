@@ -20,7 +20,7 @@ const Header = (props: any) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link active={true}><Link to="/">Home</Link></Nav.Link>
+            <Link to="/">Home</Link>
             <NavDropdown title="Category" id="basic-nav-dropdown">
               <Link className="dropdown-item" to="/products/mobiles">Mobiles</Link>
               <Link className="dropdown-item" to="/products/laptops">Laptops</Link>
@@ -29,14 +29,14 @@ const Header = (props: any) => {
               <Link className="dropdown-item" to="/products/footware">Footware</Link>
               <Link className="dropdown-item" to="/products/kids">Kids</Link>
             </NavDropdown>
-            <Nav.Link><Link to="/blog">Blog</Link></Nav.Link>
-            <Nav.Link><Link to="/about-us">About Us</Link></Nav.Link>
+            <Link  to="/blog">Blog</Link>
+            <Link  to="/about-us">About Us</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
       <Nav className="mx-4">
-        <Nav.Link href="#link">Sign Up</Nav.Link>
-        <Nav.Link href="#link">Sign In</Nav.Link>
+        <Link to="/sign-up">Sign Up</Link>
+        <Link to="/sign-up">Sign In</Link>
       </Nav>
     </Navbar>
   );

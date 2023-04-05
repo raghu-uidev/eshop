@@ -44,3 +44,59 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## User Module Screens ##
+
+1. Registration 
+2. Login
+
+## Products Module Screens ##
+
+1. Products List
+2. Prodcuct Description
+
+## Cart ##
+
+1. Cart List
+2. Payment Screen
+3. Orders
+
+## Common ##
+
+1. Common Layout
+   a. Header
+   b. Sidebar
+   c. Footer
+
+
+1. Create an Action -- > Action is function which accepts two parameters(type , payload)
+2. Action will call repesctive reducer -->  Reducer is function which accepts two parameters (action, state)
+3. Reducer will update the state --->  Components will re render  
+   
+
+   createSlice -- > This is a HOF (Higher Order Function) which will accepts another function as a parameter or returns a function as an output.
+
+   This function accpets 4 params
+    1. name
+    2. initial state
+    3. reducers
+    4. extraReducers
+
+   This function gives us 2 functions as output
+
+    1. List of actions
+    2. Reducer
+
+
+    Types of Actions
+
+    1. Sync Action or Normal Action
+    2. Ascyn Action created using  createAsyncThunk
+
+
+   CreateAsyncThunk  --- >
+
+    1. pending
+    2. fulfull  
+    3. reject

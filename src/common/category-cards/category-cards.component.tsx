@@ -1,7 +1,12 @@
 import { Button, Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import { CategoryCardsConfig } from './category-cards.config';
 import './category-cards.css';
 const CategoryCards = () => {
+    const navigate = useNavigate();
+    const goToProductsView = (category: string) => {
+       navigate(`/products/${category}`);
+    }
 
     return (
         <div className="container categoryList">
@@ -13,7 +18,7 @@ const CategoryCards = () => {
                         <Card.Text>
                             {card.cardDesc}
                         </Card.Text>
-                        <Button variant="primary">Go To Products</Button>
+                        <Button variant="primary" onClick={() => goToProductsView(card.cardCategory)}>Go To Products</Button>
                     </Card.Body>
                 </Card>
             )}
