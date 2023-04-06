@@ -1,13 +1,29 @@
-import { Button } from "react-bootstrap";
+import { useState } from "react";
+import { Alert, Button, Spinner } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
-import { ThunkDispatch } from "redux-thunk";
+import { useAppDispatch, useAppSelector } from "../../../common/hooks";
 import { registerUser, UserRegisterObj } from "../usersSlice";
 import './sign-up.css';
 
-const SignUp = () => {
-    const actionDispacther = useDispatch<ThunkDispatch<any, any, any>>();
-    
+export interface SignUpProps {
+    test: string,
+    testFun: () => void;
+    testBool: boolean;
+}
+
+const SignUp = (props: any) => {
+    //const [alertState, setAlertState] = useState(false);
+    const actionDispacther = useAppDispatch();
+    const { isRegistrationInProgress, registrationStatus } = useAppSelector(state => state.userData);
+    /**
+     *  const x =  registrationStatus;
+     *  const success =  registrationStatus.success;
+     *  const fialed = registrationStatus.failed;
+     * 
+     *  const {success , failed} = registrationStatus
+     * 
+     */
+    const { success, failed, statusMessage } = registrationStatus;
     const {
         register,
         handleSubmit,
@@ -26,6 +42,11 @@ const SignUp = () => {
 
     return (
         <div className="container form-container">
+            {(success || failed) && (
+                <Alert variant={success ? 'success' : 'danger'}  dismissible>
+                    <span>{statusMessage}</span>
+                </Alert>
+            )}
             <div className="registration-form">
                 <form onSubmit={handleSubmit(onFormSubmit)}>
                     <div className="form-row">
@@ -79,7 +100,19 @@ const SignUp = () => {
 
 
                     <div className="form-row">
-                        <Button type='submit'>Register</Button>
+                        {isRegistrationInProgress ? (
+                            <Button variant="primary" disabled>
+                                <Spinner
+                                    as="span"
+                                    animation="grow"
+                                    size="sm"
+                                    role="status"
+                                    aria-hidden="true"
+                                />
+                                Registering...
+                            </Button>
+                        ) : (<Button type='submit'>Register</Button>)
+                        }
                     </div>
                 </form>
             </div>

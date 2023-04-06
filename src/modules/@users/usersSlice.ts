@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { AnyAaaaRecord } from "dns";
 
 // user slice file
 export interface UserRegisterObj {
@@ -15,7 +16,9 @@ export interface UserState {
   isRegistrationInProgress: boolean;
   registrationStatus: {
     success: boolean;
-    failed: boolean
+    failed: boolean;
+    statusMessage: string;
+
   }
 }
 
@@ -26,7 +29,8 @@ const initialState: UserState = {
   isRegistrationInProgress: false,
   registrationStatus: {
     success: false,
-    failed: false
+    failed: false,
+    statusMessage: ''
   }
 }
 
@@ -59,9 +63,13 @@ export const registerUser = createAsyncThunk(
       const response = await axios.post(API_URL, userData);
       //const data = await response.json();
       return response.data;
-    } catch (err) {
+    } catch (err: any) {
+      let errorMessage = 'Unable to register the user. Pleae try again.';
+      if(err?.response?.data?.message) {
+        errorMessage = err?.response?.data?.message;
+      }
       return rejectWithValue({
-        message: 'Unable to register the user'
+        message: errorMessage
       })
     }
   }
@@ -80,11 +88,14 @@ const userSlice = createSlice({
        state.isRegistrationInProgress = false;
        state.registrationStatus.success = true;
        state.registrationStatus.failed = false;
+       state.registrationStatus.statusMessage = 'User registered successfully!!';
     })
-    .addCase(registerUser.rejected, (state, action) => {
+    .addCase(registerUser.rejected, (state, action: any) => {
+      //const { payload } = action;
       state.isRegistrationInProgress = false;
       state.registrationStatus.success = false;
       state.registrationStatus.failed = true;
+      state.registrationStatus.statusMessage = action.payload.message;
     })
   }
 });

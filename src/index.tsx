@@ -26,7 +26,7 @@ root.render(
         <Route key={2} path="/products/:category" element={<ProductsByCategory />}></Route>
         <Route key={3} path="/blog" element={<Blog />}></Route>
         <Route key={4} path="/about-us" element={<AboutUs />}></Route>
-        <Route key={5} path="/sign-up" element={<SignUp />}></Route>
+        <Route key={5} path="/sign-up" element={<SignUp test="test" />}></Route>
       </Routes>
     </Router>
   </Provider>
