@@ -10,8 +10,10 @@ import AboutUs from './common/about-us/about-us.component';
 import Blog from './common/blog/blog.component';
 import ProductsByCategory from './modules/@products/products-by-category/products-by-category';
 import SignUp from './modules/@users/sign-up/sign-up.component';
+import SignIn from './modules/@users/sign-in/sign-in.component';
 import { Provider } from 'react-redux';
 import store from './store';
+import ProductDetails from './modules/@products/product-details/product-details.component';
 
 
 const root = ReactDOM.createRoot(
@@ -24,9 +26,11 @@ root.render(
       <Routes>
         <Route key={1} path="/" element={<App />}></Route>
         <Route key={2} path="/products/:category" element={<ProductsByCategory />}></Route>
+        <Route key={2} path="/product-details/:productId" element={<ProductDetails />}></Route>
         <Route key={3} path="/blog" element={<Blog />}></Route>
         <Route key={4} path="/about-us" element={<AboutUs />}></Route>
-        <Route key={5} path="/sign-up" element={<SignUp test="test" />}></Route>
+        <Route key={5} path="/sign-up" element={<SignUp />}></Route>
+        <Route key={5} path="/sign-in" element={<SignIn />}></Route>
       </Routes>
     </Router>
   </Provider>

@@ -6,7 +6,7 @@ export const CategoryCardsConfig = [
         cardDesc: 'description here...'
     },
     {
-        cardCategory: 'cosmetics',
+        cardCategory: 'skincare',
         cardImgSrc: '../images/categories/cosmetics.jpg',
         cardTitle: 'Cosmetics',
         cardDesc: 'description here...'
@@ -30,7 +30,7 @@ export const CategoryCardsConfig = [
         cardDesc: 'description here...'
     },
     {
-        cardCategory: 'mobiles',
+        cardCategory: 'smartphones',
         cardImgSrc: '../images/categories/mobiles.jpg',
         cardTitle: 'Mobiles',
         cardDesc: 'description here...'

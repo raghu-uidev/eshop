@@ -13,7 +13,7 @@ export interface SignUpProps {
 
 const SignUp = (props: any) => {
     //const [alertState, setAlertState] = useState(false);
-    const actionDispacther = useAppDispatch();
+    const actionDispacther: any = useAppDispatch();
     const { isRegistrationInProgress, registrationStatus } = useAppSelector(state => state.userData);
     /**
      *  const x =  registrationStatus;

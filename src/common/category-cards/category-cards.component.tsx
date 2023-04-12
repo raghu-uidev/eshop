@@ -4,7 +4,7 @@ import { CategoryCardsConfig } from './category-cards.config';
 import './category-cards.css';
 const CategoryCards = () => {
     const navigate = useNavigate();
-    const goToProductsView = (category: string) => {
+    const goToProductsView: any = (category: string) => {
        navigate(`/products/${category}`);
     }
 

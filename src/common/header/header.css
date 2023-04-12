@@ -13,3 +13,26 @@
     color: var(--bs-white);
     background-color: var(--bs-link-hover-color);
 }
+
+.user-icon-btn {
+    border: 0;
+    background: no-repeat;
+    padding: 0;
+}
+
+.user-icon-btn:hover, .user-icon-btn:visited, .user-icon-btn:active, .user-icon-btn:focus {
+    color: transparent;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.user-icon, .cart-icon {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #0d6efd;
+    cursor: pointer;
+}
+
+.popover-body .dropdown-item {
+    padding: 10px;
+}
