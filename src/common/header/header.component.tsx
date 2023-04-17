@@ -2,12 +2,19 @@ import { Button, Container, Nav, Navbar, NavDropdown, Offcanvas, OverlayTrigger,
 import logo from '../../images/eshop-logo.png';
 import './header.css';
 import { FaRegUserCircle, FaShoppingCart } from 'react-icons/fa';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppSelector } from "../hooks";
+import CartIcon from "../../modules/@cart/cart-icon/cart-icon.component";
 const Header = (props: any) => {
+  const navigate = useNavigate();
   const { loginStatus } = useAppSelector(state => state.userData);
   const { success } = loginStatus;
   const token = localStorage.getItem('token');
+  const onSignOut = () => {
+      localStorage.clear();
+      navigate('/');
+      window.location.reload();
+  }
   return (
     <Navbar bg="light" variant="light" fixed="top" className="mb-3">
       <Container>
@@ -50,14 +57,14 @@ const Header = (props: any) => {
                       <Link className="dropdown-item" to="/">My Details</Link>
                       <Link className="dropdown-item" to="/">My Order</Link>
                       <Link className="dropdown-item" to="/">My Wishlist</Link>
-                      <Link className="dropdown-item" to="/">Sign Out</Link>
+                      <Button className="dropdown-item sign-out-btn" onClick={() => onSignOut()}>Sign Out</Button>
                     </Popover.Body>
                   </Popover>
                 }
               >
                 <Button variant="secondary" className="user-icon-btn"><FaRegUserCircle className="user-icon" /></Button>
               </OverlayTrigger>
-              <Button variant="secondary" className="user-icon-btn"><FaShoppingCart className="cart-icon" /></Button>
+              <CartIcon />
             </>
           ) :
             (

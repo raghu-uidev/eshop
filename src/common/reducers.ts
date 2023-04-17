@@ -1,10 +1,12 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import userReducer from '../modules/@users/usersSlice';
 import productsReducer from '../modules/@products/productsSlice';
+import cartReducer from '../modules/@cart/cartSlice';
 
 const appReducers = combineReducers({
-   userData : userReducer,
-   productsData: productsReducer
+   userData: userReducer,
+   productsData: productsReducer,
+   cartData: cartReducer
 });
 
 /**
@@ -31,7 +33,11 @@ const appReducers = combineReducers({
                errorMessage: '',
                isProductDetailsFetchProgress: false,
                productDetails: {}
- *      }
+ *      },
+       cartData : {
+             cartCount: 0,
+    productsInCart: []
+       }
  *        
  *    }
  * 

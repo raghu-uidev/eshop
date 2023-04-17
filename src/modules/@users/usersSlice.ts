@@ -147,6 +147,8 @@ const userSlice = createSlice({
       state.loginStatus.success = true;
       state.loginStatus.failed = false;
       localStorage.setItem('token', action.payload.token);
+      localStorage.setItem('cartId', action.payload.cartId);
+      localStorage.setItem('userId', action.payload.userId);
     })
     .addCase(loginUser.rejected, (state, action: any) => {
       state.loginStatus.isLoginInProgress = false;

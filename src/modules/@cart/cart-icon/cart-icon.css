@@ -1,0 +1,11 @@
+.cart-count {
+    position: absolute;
+    background: #f50630;
+    color: #fff;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    top: 15px;
+    right: 25px;
+}

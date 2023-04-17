@@ -1,3 +1,41 @@
 .productDetails {
     margin-top: 100px;
 }
+
+.product-container {
+    display: flex;
+    flex-direction: row;
+}
+.product-corousel, .product-detail-view {
+    width: 50%;
+    margin: 20px;
+}
+
+.product-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product-price {
+    margin-bottom: 15px;
+}
+
+.product-quantity {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+.product-quantity > div:first-child {
+   line-height: 2;
+   margin-right: 20px;
+}
+
+.product-rating {
+    margin-bottom: 15px;
+}
+
+.add-product-btn {
+    margin-top: 20px;
+}
